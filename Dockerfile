@@ -1,7 +1,6 @@
 FROM phusion/baseimage:latest
 
-
-AINTAINER takashiki <857995137@qq.com>
+MAINTAINER takashiki <857995137@qq.com>
 
 RUN locale-gen en_US.UTF-8
 

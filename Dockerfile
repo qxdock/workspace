@@ -1,4 +1,4 @@
-FROM phusion/baseimage:latest
+FROM phusion/baseimage:master
 
 MAINTAINER takashiki <857995137@qq.com>
 

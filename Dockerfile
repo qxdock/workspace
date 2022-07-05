@@ -71,7 +71,7 @@ RUN curl -s http://getcomposer.org/installer | php && \
     . ~/.bashrc
 
 RUN apt-get install -y software-properties-common gnupg && \
-    curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
+    curl -sL https://deb.nodesource.com/setup_16.x | bash - && \
     apt-get install -y nodejs && \
     npm i -g nrm n npm gulp webpack cross-env yarn && \
     n latest

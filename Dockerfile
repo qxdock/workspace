@@ -18,21 +18,21 @@ RUN apt-get install -y software-properties-common && \
 RUN apt-get update -yqq && \
     apt-get install -y --allow-downgrades --allow-remove-essential \
         --allow-change-held-packages \
-        php8.0-cli \
-        php8.0-common \
-        php8.0-curl \
-        php8.0-intl \
-        php8.0-xml \
-        php8.0-mbstring \
-        php8.0-mysql \
-        php8.0-pgsql \
-        php8.0-sqlite \
-        php8.0-sqlite3 \
-        php8.0-zip \
-        php8.0-bcmath \
-        php8.0-memcached \
-        php8.0-gd \
-        php8.0-dev \
+        php8.1-cli \
+        php8.1-common \
+        php8.1-curl \
+        php8.1-intl \
+        php8.1-xml \
+        php8.1-mbstring \
+        php8.1-mysql \
+        php8.1-pgsql \
+        php8.1-sqlite \
+        php8.1-sqlite3 \
+        php8.1-zip \
+        php8.1-bcmath \
+        php8.1-memcached \
+        php8.1-gd \
+        php8.1-dev \
         pkg-config \
         libcurl4-openssl-dev \
         libedit-dev \
@@ -49,17 +49,17 @@ RUN apt-get update -yqq && \
         postgresql-client && \
     pecl channel-update pecl.php.net
 
-RUN apt-get -y install libxml2-dev php8.0-soap \
-    libldap2-dev php8.0-ldap \
-    php8.0-imap
+RUN apt-get -y install libxml2-dev php8.1-soap \
+    libldap2-dev php8.1-ldap \
+    php8.1-imap
 
 RUN pecl install -o -f redis && \
-    echo "extension=redis.so" >> /etc/php/8.0/mods-available/redis.ini && \
+    echo "extension=redis.so" >> /etc/php/8.1/mods-available/redis.ini && \
     phpenmod redis
     
 RUN pecl install swoole && \
-    echo "extension=swoole.so" >> /etc/php/8.0/mods-available/swoole.ini && \
-    ln -s /etc/php/8.0/mods-available/swoole.ini /etc/php/8.0/cli/conf.d/20-swoole.ini
+    echo "extension=swoole.so" >> /etc/php/8.1/mods-available/swoole.ini && \
+    ln -s /etc/php/8.1/mods-available/swoole.ini /etc/php/8.1/cli/conf.d/20-swoole.ini
 
 USER root
 
